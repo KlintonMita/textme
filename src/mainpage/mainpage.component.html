@@ -1,0 +1,63 @@
+<div class="main-page">
+  <div class="sub-page">
+    <mat-card class="mat-card" appearance="outlined">
+      <mat-card-content>
+        <div class="sidenav">
+          <div class="sidenav-header">
+            <img class="profile-photo" src="./assets/photos/blank.png">
+            <div class="sidenav-header-profile">
+              <div class="btn-add">
+                <button mat-icon-button (click)="openDialog()"><mat-icon>chat</mat-icon></button>
+              </div>
+              <div class="btn-header">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                    <mat-icon>dialpad</mat-icon>
+                    <span>Redial</span>
+                  </button>
+                  <button mat-menu-item disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Check voice mail</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Disable alerts</span>
+                  </button>
+                </mat-menu>
+              </div>
+            </div>
+          </div>
+          <div class="sidenav-search">
+            <div class="search-bar">
+              <input type="text" placeholder="Search" #filter>
+              <button class="primary" type="button"><mat-icon>search</mat-icon></button>
+            </div>
+          </div>
+          <div class="sidenav-messages">
+            <div (click)="openMessage(user)" class="main-msg" *ngFor="let user of users">
+              <div class="msg-photo">
+                <img class="msg-img" src="./assets/photos/blank.png">
+              </div>
+              <div class="msg-details">
+                <div class="msg-time">
+                  <h1 class="msg-name">{{ user.firstName }} {{ user.lastName }}</h1>
+                </div>
+                <h2 class="last-msg">{{ user.email }}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="body-main">
+    <mat-card appearance="outlined" class="mat-card-main">
+      <mat-card-content class="mat-app-main-body">
+        <app-main-body [selectedUser]="selectedUser"></app-main-body>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

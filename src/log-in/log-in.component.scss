@@ -1,0 +1,101 @@
+.main-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.mat-card {
+  background-color: #5365b8;
+  border-radius: 20px;
+  max-width: 310px;
+}
+
+.form-field-email {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  input {
+    width: 80%;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+  }
+}
+
+.form-field-password {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  input {
+    width: 80%;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+  }
+}
+
+.btn-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .btn-style {
+        width: 80%;
+        padding: 10px;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        gap: 100px;
+
+        .btn-signin {
+            width: 110px;
+            height: 35px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .btn-signin:hover {
+            scale: 1.1;
+            cursor: pointer;
+        }
+
+        .btn-create {
+            width: 110px;
+            height: 35px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .btn-create:hover {
+            scale: 1.1;
+            cursor: pointer;
+        }
+    }
+}
