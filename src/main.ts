@@ -16,7 +16,7 @@ import { getRemoteConfig, provideRemoteConfig } from '@angular/fire/remote-confi
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(BrowserAnimationsModule),
-    provideRouter(routes), provideFirebaseApp(() => initializeApp({"projectId":"textme-807e6","appId":"1:363748677023:web:88f1561915d4b7079f19aa","storageBucket":"textme-807e6.appspot.com","apiKey":"AIzaSyA_S5mmCitg_hU8j0BqhYTQTWAFw2NLYjU","authDomain":"textme-807e6.firebaseapp.com","messagingSenderId":"363748677023","measurementId":"G-9SYEM0RZ0R"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideDatabase(() => getDatabase()), provideFunctions(() => getFunctions()), provideMessaging(() => getMessaging()), provideStorage(() => getStorage()), provideRemoteConfig(() => getRemoteConfig())
+    provideRouter(routes), provideFirebaseApp(() => initializeApp({"projectId":"textme-807e6","appId":"1:363748677023:web:88f1561915d4b7079f19aa","storageBucket":"textme-807e6.appspot.com","apiKey":"","authDomain":"textme-807e6.firebaseapp.com","messagingSenderId":"363748677023","measurementId":"G-9SYEM0RZ0R"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideDatabase(() => getDatabase()), provideFunctions(() => getFunctions()), provideMessaging(() => getMessaging()), provideStorage(() => getStorage()), provideRemoteConfig(() => getRemoteConfig())
   ]
 })
   .catch(err => console.error(err));
