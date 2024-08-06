@@ -5,6 +5,7 @@
         <div class="sidenav">
           <div class="sidenav-header">
             <img class="profile-photo" src="./assets/photos/blank.png">
+            <h2>{{user?.email}}</h2>
             <div class="sidenav-header-profile">
               <div class="btn-add">
                 <button mat-icon-button (click)="openDialog()"><mat-icon>chat</mat-icon></button>
@@ -15,25 +16,10 @@
                 </button>
                 <mat-menu #menu="matMenu">
                   <button mat-menu-item>
-                    <mat-icon>dialpad</mat-icon>
-                    <span>Redial</span>
-                  </button>
-                  <button mat-menu-item disabled>
-                    <mat-icon>voicemail</mat-icon>
-                    <span>Check voice mail</span>
-                  </button>
-                  <button mat-menu-item>
-                    <mat-icon>notifications_off</mat-icon>
-                    <span>Disable alerts</span>
+                    <h1 class="signOut" (click)="signOut()">Sign Out</h1>
                   </button>
                 </mat-menu>
               </div>
-            </div>
-          </div>
-          <div class="sidenav-search">
-            <div class="search-bar">
-              <input type="text" placeholder="Search" #filter>
-              <button class="primary" type="button"><mat-icon>search</mat-icon></button>
             </div>
           </div>
           <div class="sidenav-messages">

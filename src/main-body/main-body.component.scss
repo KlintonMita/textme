@@ -2,8 +2,9 @@
   display: flex;
   width: 100%;
   max-height: 60px;
-  background-color: #f5f5f5; /* Adding background for better visibility */
-  border-bottom: 1px solid #ddd; /* Adding border for separation */
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .header-main {
@@ -13,14 +14,14 @@
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  padding: 10px; /* Adding padding for better spacing */
+  padding: 10px;
 }
 
 .main-photo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  object-fit: cover; /* Ensures image fits the container */
+  object-fit: cover;
 }
 
 .header-name {
@@ -38,13 +39,13 @@
 }
 
 .body {
-  background-color: #f1f1f1; /* Change background to light gray */
+  background-color: #f1f1f1;
   flex: 1;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
-  padding-top: 10px; /* Adding padding to the top */
+  padding-top: 10px; 
 }
 
 .message {
@@ -52,20 +53,20 @@
   border-radius: 5px;
   max-width: 60%;
   word-wrap: break-word;
-  margin: 8px 16px; /* Adjust margin for spacing between messages */
+  margin: 8px 16px;
 }
 
 .sent {
   background-color: #dcf8c6;
   align-self: flex-end;
-  text-align: right; /* Align text to the right */
-  margin-left: auto; /* Push to the end */
+  text-align: right;
+  margin-left: auto; 
 }
 
 .received {
   background-color: #ffffff;
   align-self: flex-start;
-  text-align: left; /* Align text to the left */
+  text-align: left; 
 }
 
 .reply {
@@ -74,14 +75,14 @@
   background-color: #ffffff;
   border-top: 1px solid #ddd;
   flex-shrink: 0;
-  border-radius: 20px;
-  margin: 0 16px 16px; /* Adding margin for spacing */
+  border-radius: 0px 0px 20px 20px;
+  margin: 0px 0px 28px;
 }
 
 .reply input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ddd; /* Adding border for input field */
+  border: 1px solid #ddd;
   border-radius: 5px;
   margin-right: 10px;
   outline: none;
@@ -90,12 +91,12 @@
 .reply button {
   padding: 10px 20px;
   border: none;
-  background-color: #075e54;
+  background-color: #5365b8;
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .reply button:hover {
-  background-color: #064d43; /* Darker shade on hover */
+  background-color: #6878c1;
 }

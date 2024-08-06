@@ -1,5 +1,5 @@
 import { CommonModule, NgClass, NgIf } from '@angular/common';
-import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../assets/services/models/user.model';
 import { Firestore, collection, collectionData, addDoc, query, orderBy } from '@angular/fire/firestore';
@@ -22,6 +22,8 @@ export class MainBodyComponent implements OnChanges {
   firestore: Firestore = inject(Firestore);
   auth: Auth = inject(Auth);
 
+  private cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
+
   ngOnInit() {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
@@ -37,7 +39,6 @@ export class MainBodyComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes['selectedUser'] && !changes['selectedUser'].firstChange) {
       this.loadMessages();
-      this.newMessage = '';
     }
   }
 
@@ -52,6 +53,7 @@ export class MainBodyComponent implements OnChanges {
       const q = query(messagesRef, orderBy('timestamp', 'asc')); // Ensure messages are ordered by timestamp
       collectionData(q, { idField: 'id' }).subscribe((messages: any[]) => {
         this.messages = messages;
+        this.cdr.detectChanges(); // Manually trigger change detection
       }, error => {
         console.error('Error fetching messages: ', error);
       });
@@ -72,16 +74,9 @@ export class MainBodyComponent implements OnChanges {
           timestamp: new Date() 
         });
         this.newMessage = '';
-
-        this.messages.push({
-          text: this.newMessage,
-          sent: true,
-          userId: this.currentUser.uid,
-          receiverId: this.selectedUser.id,
-          timestamp: new Date()
-        });
-
-        this.messages.sort((a, b) => a.timestamp - b.timestamp);
+        
+        this.messages = [...this.messages]; // Create a new reference
+        this.cdr.detectChanges(); // Manually trigger change detection
       } catch (error) {
         console.error('Error sending message: ', error);
       }
